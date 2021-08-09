@@ -15,7 +15,7 @@ def callback(data):
 
     rospy.loginfo('Position: ' + str(posX) + ' ' + str(posY) + ' ' + str(posZ))
 
-#Subscribes to receive data from topic 'chatter'.
+# Subscribes to receive data from topic 'chatter'.
 def listener():
 
     rospy.init_node('listener', anonymous=True)
