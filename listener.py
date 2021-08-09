@@ -3,7 +3,7 @@
 import rospy
 from geometry_msgs.msg import PoseStamped
 
-# Function to process data returned.
+# Procedure to print the data returned.
 def callback(data):
     posX = data.pose.position.x
     posY = data.pose.position.y
