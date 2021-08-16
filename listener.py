@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 
 import rospy
+from std_msgs.msg import String
 from geometry_msgs.msg import PoseStamped
 
-# Procedure to print the data returned.
 def callback(data):
     posX = data.pose.position.x
     posY = data.pose.position.y
     posZ = data.pose.position.z
 
-    tup = (posX,posY,posZ)
-
+    oriX = data.pose.orientation.x
     oriY = data.pose.orientation.y
+    oriZ = data.pose.orientation.z
+    
 
-    rospy.loginfo('Position: ' + str(posX) + ' ' + str(posY) + ' ' + str(posZ))
+    rospy.loginfo('(' + str(posX) + ',' + str(posY) + ',' + str(posZ) + ')   (' + str(oriX) + ',' + str(oriY) + ',' + str(oriZ) + ')')
 
-# Subscribes to receive data from topic 'chatter'.
 def listener():
 
     rospy.init_node('listener', anonymous=True)
