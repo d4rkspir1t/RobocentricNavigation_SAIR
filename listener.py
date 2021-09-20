@@ -4,6 +4,7 @@ import rospy
 from std_msgs.msg import String
 from geometry_msgs.msg import PoseStamped
 
+
 def callback(data):
     posX = data.pose.position.x
     posY = data.pose.position.y
@@ -16,6 +17,7 @@ def callback(data):
 
     rospy.loginfo('(' + str(posX) + ',' + str(posY) + ',' + str(posZ) + ')   (' + str(oriX) + ',' + str(oriY) + ',' + str(oriZ) + ')')
 
+
 def listener():
 
     rospy.init_node('listener', anonymous=True)
@@ -24,5 +26,13 @@ def listener():
 
     rospy.spin()
 
+
 if __name__ == '__main__':
     listener()
+
+#  ===========================
+#  ~~ CMDs TO MAKE IT WORK  ~~
+#  ===========================
+#  roscore
+#  roslaunch rosbridge_server  rosbridge_websocket.launch
+#  python listener.py
