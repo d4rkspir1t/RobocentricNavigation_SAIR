@@ -36,3 +36,4 @@ if __name__ == '__main__':
 #  roscore
 #  roslaunch rosbridge_server  rosbridge_websocket.launch
 #  python listener.py
+#  rosrun rqt_image_view rqt_image_view
